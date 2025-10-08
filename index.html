@@ -1,1 +1,158 @@
-hello world, from blaise
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blaise Mariner — Bioinformatics & Research Consulting</title>
+  <meta name="description" content="Bioinformatics, genomics, and data science consulting. Methylation, RNA-seq, pipelines, reproducible analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="#top">Blaise Mariner</a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger" aria-label="Open Menu">☰</label>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero container" id="top">
+    <div class="hero-text">
+      <h1>Bioinformatics & Research Consulting</h1>
+      <p>Genomics, DNA methylation, RNA‑seq, pipelines, and reproducible analysis. I help teams turn messy biology into clean, actionable results.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Work with me</a>
+        <a class="btn" href="assets/Blaise_Mariner_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+      <div class="badges">
+        <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a> ·
+        <a href="https://patreon.com/" target="_blank" rel="noopener">Patreon</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container grid two" id="about">
+    <div>
+      <h2>About</h2>
+      <p>I'm a bioinformatics researcher focused on epigenetics and aging. I build robust, scalable workflows (R, Python, Nextflow, SLURM) and translate complex results into decisions.</p>
+      <ul class="bullets">
+        <li>Specialties: methylation clocks, meQTL, GWAS, RNA‑seq</li>
+        <li>Tooling: R (tidyverse, Bioconductor), Python, Nextflow/Snakemake, PLINK/GCTA</li>
+        <li>Compute: HPC at scale, cloud‑ready pipelines, reproducible containers</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Selected Highlights</h3>
+      <ul>
+        <li>Discovered faster TE methylation erosion in larger dog breeds</li>
+        <li>Lead pipelines for 900+ dog RRBS cohort</li>
+        <li>Patent pending on ATF4 activation via tRNA synthetase inhibitors</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-alt" id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>Analysis & Pipelines</h3>
+          <p>End‑to‑end analysis: QC → modeling → figures. Reproducible workflows (R/Python, Nextflow, containers).</p>
+        </div>
+        <div class="card">
+          <h3>Modeling & Methods</h3>
+          <p>Elastic‑net clocks, mixed models, meQTL/GWAS, enrichment, benchmarking, reporting.</p>
+        </div>
+        <div class="card">
+          <h3>Advisory & Training</h3>
+          <p>Study design, code review, hiring interviews, workshops, documentation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" id="projects">
+    <h2>Selected Work</h2>
+    <div class="grid three">
+      <div class="card">
+        <h3>Dog Epigenetic Clock</h3>
+        <p>Elastic‑net clock across 200k regions; cross‑validation, calibration, and error analysis.</p>
+        <a class="pill" href="#" target="_blank">Code</a>
+      </div>
+      <div class="card">
+        <h3>meQTL Pipeline</h3>
+        <p>Scalable association testing with kinship random effects; automated reporting.</p>
+        <a class="pill" href="#" target="_blank">Docs</a>
+      </div>
+      <div class="card">
+        <h3>GWAS + MR</h3>
+        <p>End‑to‑end GWAS with MLMA‑LOCO; two‑sample MR to link methylation and traits.</p>
+        <a class="pill" href="#" target="_blank">Preprint</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="publications">
+    <div class="container">
+      <h2>Publications</h2>
+      <ul class="pubs">
+        <li><strong>Title of Paper</strong> — Journal (2024). <a href="#" target="_blank">DOI</a></li>
+        <li><strong>Another Paper</strong> — Journal (2023). <a href="#" target="_blank">DOI</a></li>
+      </ul>
+      <p class="note">Full list on <a href="#" target="_blank">Google Scholar</a> / <a href="#" target="_blank">ORCID</a>.</p>
+    </div>
+  </section>
+
+  <section class="container" id="writing">
+    <h2>Writing</h2>
+    <div class="grid two">
+      <article class="card">
+        <h3>How I QC RRBS at scale</h3>
+        <p>Practical tips from 900+ samples: coverage thresholds, batch effects, and reproducibility.</p>
+        <a class="pill" href="#" target="_blank">Read</a>
+      </article>
+      <article class="card">
+        <h3>Choosing mixed models for methylation</h3>
+        <p>Why relatedness and repeated measures matter — and what to report to reviewers.</p>
+        <a class="pill" href="#" target="_blank">Read</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-alt" id="contact">
+    <div class="container contact">
+      <h2>Contact</h2>
+      <p>For consulting, collaborations, or speaking, email <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a> or book a quick intro call.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:blaisemariner17@gmail.com">Email me</a>
+        <a class="btn" href="https://calendly.com/" target="_blank" rel="noopener">Schedule call</a>
+        <a class="btn" href="https://patreon.com/" target="_blank" rel="noopener">Support on Patreon</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container small">
+      <p>© <span id="year"></span> Blaise Mariner · Denver · <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
