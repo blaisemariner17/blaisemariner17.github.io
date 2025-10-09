@@ -12,67 +12,63 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <style>
-    /* White background everywhere */
-    html, body {
-      background: #fff;
-      color: #000;
-    }
-    .section-alt {
-      background: #fff;
-    }
+    /* Global: black text, white background */
+    html, body { background: #fff; color: #000; }
+    .section-alt { background: #fff; }
 
-    /* Hero header image setup */
+    /* Links distinct (not black) */
+    a { color: #0a58ca; text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+
+    /* Hero with stronger fade (white overlay) + black text */
     .hero {
+      position: relative;
       background-image: url("assets/edge_node_graph_borr.png");
       background-size: cover;
       background-position: center;
       padding: 6rem 0;
-      position: relative;
-      color: #000; /* text is black */
+      color: #000;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.65); /* stronger fade over image */
     }
     .hero .hero-text {
-      position: relative;
+      position: relative; /* above overlay */
       max-width: 900px;
       margin: 0 auto;
       padding: 1.25rem 1rem;
-      background: rgba(255, 255, 255, 0.7); /* soft white background for readability */
+      background: rgba(255,255,255,0.8); /* subtle panel for readability */
       border-radius: 0.75rem;
     }
 
-    /* Consistent layout for About, Highlights, and Publications */
-    #about .container,
-    #publications .container {
-      max-width: 900px;
-      margin: 0 auto;
+    /* Section containers */
+    #about .container, #education .container, #publications .container,
+    #contact .container, #support .container {
+      max-width: 900px; margin: 0 auto;
     }
-    #about h2, #about h3,
-    #publications h2 {
-      text-align: left;
-      margin-bottom: 0.75rem;
-    }
+    #about h2, #about h3, #education h2, #publications h2,
+    #contact h2, #support h2 { text-align: left; margin-bottom: 0.75rem; }
 
-    /* Unified list styling */
-    .pubs {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 0;
-    }
-    .pubs li {
-      margin: 0.5rem 0;
-      line-height: 1.5;
-    }
+    /* Lists */
+    .pubs { list-style: none; padding: 0; margin: 0.5rem 0 0; } /* publications stay unbulleted */
+    .pubs li { margin: 0.5rem 0; line-height: 1.5; }
 
-    /* Buttons readable on light background */
-    .btn.primary {
-      border: 1px solid #333;
-      color: #000;
-      background: #fff;
-    }
-    .btn.primary:hover {
-      background: #f2f2f2;
-    }
-    .btn {
-      color: #000;
+    /* Bulleted list for Selected Highlights */
+    .bulleted { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0 0; }
+    .bulleted li { margin: 0.4rem 0; line-height: 1.5; }
+
+    /* Buttons */
+    .btn.primary { border: 1px solid #333; color: #000; background: #fff; }
+    .btn.primary:hover { background: #f2f2f2; }
+    .btn { color: #000; }
+
+    /* Support (ETH) box */
+    #support .eth-box {
+      border: 1px solid #ccc; background: #fafafa; padding: 1rem;
+      border-radius: 0.5rem; word-break: break-all; font-family: monospace; text-align: center;
     }
   </style>
 </head>
@@ -84,8 +80,10 @@
       <label for="menu-toggle" class="hamburger" aria-label="Open Menu">☰</label>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#support">Support</a></li>
       </ul>
     </nav>
   </header>
@@ -100,8 +98,7 @@
       </div>
       <div class="badges">
         <a href="https://github.com/blaisemariner17" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="https://www.linkedin.com/r/Blaise-Mariner" target="_blank" rel="noopener">LinkedIn</a> ·
-        <a href="https://patreon.com/" target="_blank" rel="noopener">Patreon</a>
+        <a href="https://www.linkedin.com/r/Blaise-Mariner" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -117,10 +114,22 @@
       </ul>
 
       <h3 style="margin-top:1.25rem;">Selected Highlights</h3>
-      <ul class="pubs">
+      <ul class="bulleted">
         <li>Discovered faster TE methylation erosion in larger dog breeds (Postdoc)</li>
-        <li>Lead pipelines for 900+ dog RRBS cohort (Postdoc)</li>
-        <li>Quantified reverse transcriptase inhibitors as a class of drug that can activate autophagy in mammals by activating highly conserved pathways of hormesis (PhD)</li>
+        <li>Led pipelines for 900+ dog RRBS cohort (Postdoc)</li>
+        <li>Quantified reverse transcriptase inhibitors as a class of drug that can activate autophagy in mammals via conserved hormetic pathways (PhD)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- New Education section -->
+  <section class="section-alt" id="education">
+    <div class="container">
+      <h2>Education</h2>
+      <ul class="bulleted">
+        <li><strong>Ph.D., University of New Mexico</strong> — Graduated with distinction</li>
+        <li><strong>M.S., Biomedical Engineering, University of New Mexico</strong> — Concentration in Cellular & Molecular Systems</li>
+        <li><strong>B.S., University of Denver</strong> — Double major in Mathematics & Biological Sciences</li>
       </ul>
     </div>
   </section>
@@ -131,12 +140,12 @@
       <ul class="pubs">
         <li>
           <strong>Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</strong> —
-          <em>GeroScience</em> (2023).  
+          <em>GeroScience</em> (2023).
           <a href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
         </li>
         <li>
           <strong>Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</strong> —
-          <em>International Journal of Molecular Sciences</em> (2023).  
+          <em>International Journal of Molecular Sciences</em> (2023).
           <a href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
         </li>
         <li>
@@ -159,8 +168,21 @@
       <p>For contact, email <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>.</p>
       <div class="cta">
         <a class="btn primary" href="mailto:blaisemariner17@gmail.com">Email me</a>
-        <a class="btn" href="https://patreon.com/" target="_blank" rel="noopener">Support on Patreon</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="support">
+    <div class="container">
+      <h2>Support My Research</h2>
+      <p>Your contributions directly support my work on aging and age-related deterioration — funding my time, data analysis, and continued independent research.</p>
+      <div class="eth-box">
+        <strong>Ethereum Address:</strong><br>
+        0xC4b57C48908dda8547089E2AE699FeBb9eE93906
+      </div>
+      <p style="margin-top:0.75rem; font-size:0.95em; color:#444;">
+        All proceeds go directly toward funding myself and my ongoing research endeavors related to aging and the biology of age-associated decline.
+      </p>
     </div>
   </section>
 
