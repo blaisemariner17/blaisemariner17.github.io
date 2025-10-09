@@ -12,29 +12,62 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <style>
-    /* Center the About section text and highlights */
-    #about {
-      text-align: center;
-      justify-content: center;
-      align-items: center;
+    /* Ensure white background everywhere */
+    html, body { background: #fff; }
+
+    /* Make "alt" sections white too */
+    .section-alt { background: #fff; }
+
+    /* Hero header image */
+    .hero {
+      background-image: url("assets/edge_node_graph_borr.png");
+      background-size: cover;
+      background-position: center;
+      padding: 6rem 0;
+      position: relative;
+      color: #fff;
     }
-    #about .grid.two {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* Light overlay for readability */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
     }
-    #about ul.bullets,
-    #about .card ul {
+    .hero .hero-text {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem;
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+
+    /* Make sections (About/Highlights/Publications) consistent */
+    #about .container,
+    #publications .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #about h2, #about h3,
+    #publications h2 {
+      text-align: left; /* match Publications vibe */
+      margin-bottom: 0.75rem;
+    }
+
+    /* Use the same list style as publications */
+    .pubs {
       list-style: none;
       padding: 0;
-      margin: 0 auto;
-      display: inline-block;
-      text-align: left; /* keeps bullets aligned nicely */
+      margin: 0.5rem 0 0;
     }
-    #about h2,
-    #about h3 {
-      text-align: center;
+    .pubs li {
+      margin: 0.5rem 0;
+      line-height: 1.5;
     }
+
+    /* CTA buttons on hero readable on dark overlay */
+    .btn.primary { border: 1px solid rgba(255,255,255,0.6); }
   </style>
 </head>
 <body>
@@ -67,19 +100,19 @@
     </div>
   </section>
 
-  <section class="container grid two" id="about">
-    <div>
+  <!-- ABOUT now styled like PUBLICATIONS -->
+  <section class="section-alt" id="about">
+    <div class="container">
       <h2>About</h2>
       <p>I'm a bioinformatics researcher focused on epigenetics and aging. I build robust, scalable workflows (R, Python, Nextflow, SLURM) and translate complex results.</p>
-      <ul class="bullets">
-        <li>Specialties: methylation clocks, meQTL, GWAS, RNA-seq</li>
-        <li>Tooling: R (tidyverse, Bioconductor), Python, Nextflow/Snakemake, PLINK/GCTA</li>
-        <li>Compute: HPC at scale, cloud-ready pipelines, reproducible containers</li>
+      <ul class="pubs">
+        <li><strong>Specialties:</strong> methylation clocks, meQTL, GWAS, RNA-seq</li>
+        <li><strong>Tooling:</strong> R (tidyverse, Bioconductor), Python, Nextflow/Snakemake, PLINK/GCTA</li>
+        <li><strong>Compute:</strong> HPC at scale, cloud-ready pipelines, reproducible containers</li>
       </ul>
-    </div>
-    <div class="card">
-      <h3>Selected Highlights</h3>
-      <ul>
+
+      <h3 style="margin-top:1.25rem;">Selected Highlights</h3>
+      <ul class="pubs">
         <li>Discovered faster TE methylation erosion in larger dog breeds (Postdoc)</li>
         <li>Lead pipelines for 900+ dog RRBS cohort (Postdoc)</li>
         <li>Quantified reverse transcriptase inhibitors as a class of drug that can activate autophagy in mammals by activating highly conserved pathways of hormesis (PhD)</li>
