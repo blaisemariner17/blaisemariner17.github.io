@@ -12,210 +12,115 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <style>
-    /* Global: black text, white background */
-    html, body { background: #fff; color: #000; }
-    .section-alt { background: #fff; }
+    html, body { background: #fff; color: #000; font-family: 'Inter', sans-serif; margin: 0; }
 
-    /* Links distinct (not black) */
-    a { color: #0a58ca; text-decoration: none; }
-    a:hover, a:focus { text-decoration: underline; }
-
-    /* Hero with gentle white overlay + black text */
-    .hero {
-      position: relative;
-      background-image: url("assets/edge_node_graph_borr.png");
-      background-size: cover;
-      background-position: center;
-      padding: 6rem 0;
-      color: #000;
+    /* Layout */
+    .main-content {
+      margin-right: 280px; /* space for sidebar */
+      padding: 0;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255,255,255,0.65);
-    }
-    .hero .hero-text {
-      position: relative; /* above overlay */
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 1.25rem 1rem;
-      background: rgba(255,255,255,0.8);
-      border-radius: 0.75rem;
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 260px;
+      height: 100%;
+      background: #fafafa;
+      border-left: 1px solid #eee;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
-    /* Section containers */
-    #about .container, #education .container, #publications .container,
-    #contact .container, #support .container {
-      max-width: 900px; margin: 0 auto;
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 2px solid #ddd;
     }
-    #about h2, #about h3, #education h2, #publications h2,
-    #contact h2, #support h2 { text-align: left; margin-bottom: 0.75rem; }
 
-    /* Lists */
-    .pubs { list-style: none; padding: 0; margin: 0.5rem 0 0; } /* publications: unbulleted */
-    .pubs li { margin: 0.5rem 0; line-height: 1.5; }
-
-    .bulleted { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0 0; }
-    .bulleted li { margin: 0.4rem 0; line-height: 1.5; }
-
-    /* Buttons */
-    .btn.primary { border: 1px solid #333; color: #000; background: #fff; }
-    .btn.primary:hover { background: #f2f2f2; }
-    .btn { color: #000; }
-
-    /* Donations box: modest, discreet */
-    #support .donation-box {
-      border: 1px solid #e6e6e6;
-      background: #fbfbfb;
-      padding: 0.75rem 1rem;
-      border-radius: 0.5rem;
-      font-size: 0.95rem;
-      color: #333;
+    .sidebar h2 {
+      margin: 0 0 0.25rem;
+      font-size: 1.25rem;
     }
-    #support .donation-box p {
-      margin: 0 0 0.5rem 0;
-    }
-    #support .addr {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 0.25rem 0.75rem;
-      align-items: baseline;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      word-break: break-all;
-    }
-    #support .addr .label {
+    .sidebar p {
+      margin: 0 0 1rem;
+      font-size: 0.9rem;
       color: #555;
     }
-    #support .fineprint {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      color: #666;
+
+    .affiliations {
+      text-align: left;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
     }
+    .affiliations a { color: #0a58ca; text-decoration: none; }
+    .affiliations a:hover { text-decoration: underline; }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .social-icons a img {
+      width: 22px;
+      height: 22px;
+      opacity: 0.8;
+      transition: opacity 0.2s ease-in-out;
+    }
+    .social-icons a:hover img {
+      opacity: 1;
+    }
+
+    /* Hero adjustments */
+    .hero { position: relative; background-image: url("assets/edge_node_graph_borr.png"); background-size: cover; background-position: center; padding: 6rem 0; color: #000; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,0.65); }
+    .hero .hero-text { position: relative; max-width: 900px; margin: 0 auto; padding: 1.25rem 1rem; background: rgba(255,255,255,0.8); border-radius: 0.75rem; }
+
+    /* Links, buttons, sections */
+    a { color: #0a58ca; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .btn.primary { border: 1px solid #333; color: #000; background: #fff; padding: 0.4rem 0.8rem; border-radius: 4px; }
+    .btn.primary:hover { background: #f2f2f2; }
+
+    section { padding: 2rem 1rem; max-width: 900px; margin: 0 auto; }
+    h2 { margin-bottom: 0.5rem; }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a class="brand" href="#top">Blaise Mariner</a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="hamburger" aria-label="Open Menu">☰</label>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#support">Support</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section class="hero container" id="top">
-    <div class="hero-text">
-      <h1>Blaise Mariner — bioinformatics & aging</h1>
-      <p>Genomics, DNA methylation, RNA-seq, pipelines, and reproducible analysis in any organism. I help teams turn messy -omics into clean, interpretable results for follow-up analyses. I have documented experience from working with data from simple model organisms (yeast, nematodes), cell culture (HeLa, fibroblasts), and heterogeneous mammals (humans, dogs). </p>
-      <div class="cta">
-        <a class="btn primary" href="#contact">Work with me</a>
-        <a class="btn" href="assets/Blaise_Mariner_CV.pdf" target="_blank" rel="noopener">Download CV</a>
-      </div>
-      <div class="badges">
-        <a href="https://github.com/blaisemariner17" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="https://www.linkedin.com/r/Blaise-Mariner" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar</a> ·
-          <a href="http://x.com/blaisemariner" target="_blank" rel="noopener">X</a> ·
-          <a href="https://bsky.app/profile/blaisemariner.bsky.social" target="_blank" rel="noopener">Bluesky</a> ·
-        <div class="badges">
-      </div>
+  <div class="main-content">
+    <!-- your existing header and main sections go here -->
+    <!-- (you can paste everything from <header> ... </footer> here unchanged) -->
+    <!-- ensure your footer sits before the sidebar -->
+  </div>
+
+  <aside class="sidebar">
+    <img src="assets/blaise.jpg" alt="Blaise Mariner portrait">
+    <h2>Blaise Mariner</h2>
+    <p>Bioinformatics & Aging</p>
+
+    <div class="affiliations">
+      <strong>Affiliations</strong><br>
+      <a href="https://evmed.asu.edu/" target="_blank" rel="noopener">Center for Evolution and Medicine</a><br>
+      <a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab</a><br><br>
+      <strong>Past</strong><br>
+      <a href="https://labmccormick.org/" target="_blank" rel="noopener">McCormick Lab</a>
     </div>
-  </section>
 
-  <section class="section-alt" id="about">
-    <div class="container">
-      <h2>About</h2>
-      <p>I'm a bioinformatics researcher focused on epigenetics and aging. I build robust, scalable workflows (R, Python, Nextflow, SLURM) and translate complex results.</p>
-      <ul class="pubs">
-        <li><strong>Specialties:</strong> methylation clocks, meQTL, GWAS, RNA-seq</li>
-        <li><strong>Tooling:</strong> R (tidyverse, Bioconductor), Python, Nextflow/Snakemake, PLINK/GCTA</li>
-        <li><strong>Compute:</strong> HPC at scale, cloud-ready pipelines, reproducible containers</li>
-      </ul>
-
-      <h3 style="margin-top:1.25rem;">Selected Highlights</h3>
-      <ul class="bulleted">
-        <li>Quantified reverse transcriptase inhibitors as a class of drug that can activate autophagy in mammals via conserved hormetic pathways using RNA sequencing (PhD)</li>
-        <li>Discovered faster transposon methylation erosion in larger dog breeds using a 900+ sample DNA methylation dataset with the Dog Aging Project (Postdoc)</li>
-      </ul>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/Blaise-Mariner" target="_blank" rel="noopener"><img src="assets/social/linkedin.svg" alt="LinkedIn"></a>
+      <a href="http://x.com/blaisemariner" target="_blank" rel="noopener"><img src="assets/social/x.svg" alt="X"></a>
+      <a href="https://bsky.app/profile/blaisemariner.bsky.social" target="_blank" rel="noopener"><img src="assets/social/bluesky.svg" alt="Bluesky"></a>
+      <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener"><img src="assets/social/scholar.svg" alt="Google Scholar"></a>
     </div>
-  </section>
-
-  <section class="section-alt" id="education">
-    <div class="container">
-      <h2>Education</h2>
-      <ul class="bulleted">
-        <li><strong>Ph.D., Engineering, University of New Mexico</strong> — Graduated with distinction. Advisor: Mark A. McCormick, Ph.D.</li>
-        <li><strong>M.Sc., Biomedical Engineering, University of New Mexico</strong> — Concentration in Cellular & Molecular Systems</li>
-        <li><strong>Undergraduate, University of Denver</strong> — Double major in Mathematics & Biological Sciences</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section-alt" id="publications">
-    <div class="container">
-      <h2>Publications</h2>
-      <ul class="pubs">
-        <li>
-          <strong>Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</strong> —
-          <em>GeroScience</em> (2023).
-          <a href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
-        </li>
-        <li>
-          <strong>Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</strong> —
-          <em>International Journal of Molecular Sciences</em> (2023).
-          <a href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
-        </li>
-        <li>
-          <strong>Epigenomic Signatures of Lifespan Variation in Dogs: Findings from the Dog Aging Project</strong> —
-          <em>Science</em> (in revision)
-        </li>
-      </ul>
-      <p class="note">
-        Full list on
-        <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">
-          Google Scholar
-        </a>.
-      </p>
-    </div>
-  </section>
-
-  <section class="section-alt" id="contact">
-    <div class="container contact">
-      <h2>Contact</h2>
-      <p>For contact, email <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>.</p>
-      <div class="cta">
-        <a class="btn primary" href="mailto:blaisemariner17@gmail.com">Email me</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-alt" id="support">
-    <div class="container">
-      <h2>Support</h2>
-      <div class="donation-box" aria-label="Donation addresses">
-        <p>Proceeds go directly toward supporting my time and analysis for aging and age-related deterioration research.</p>
-        <div class="addr">
-          <span class="label">Ethereum</span>
-          <span>0xC4b57C48908dda8547089E2AE699FeBb9eE93906</span>
-          <span class="label">PulseChain</span>
-          <span>0x592F919151bE78216fa45dFD7E9Ea41609a47a05</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container small">
-      <p>© <span id="year"></span> Blaise Mariner · Denver · <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a></p>
-    </div>
-  </footer>
+  </aside>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
