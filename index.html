@@ -12,38 +12,34 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <style>
-    /* Ensure white background everywhere */
-    html, body { background: #fff; }
+    /* White background everywhere */
+    html, body {
+      background: #fff;
+      color: #000;
+    }
+    .section-alt {
+      background: #fff;
+    }
 
-    /* Make "alt" sections white too */
-    .section-alt { background: #fff; }
-
-    /* Hero header image */
+    /* Hero header image setup */
     .hero {
       background-image: url("assets/edge_node_graph_borr.png");
       background-size: cover;
       background-position: center;
       padding: 6rem 0;
       position: relative;
-      color: #fff;
-    }
-    /* Light overlay for readability */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.35);
+      color: #000; /* text is black */
     }
     .hero .hero-text {
       position: relative;
       max-width: 900px;
       margin: 0 auto;
       padding: 1.25rem 1rem;
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
+      background: rgba(255, 255, 255, 0.7); /* soft white background for readability */
+      border-radius: 0.75rem;
     }
 
-    /* Make sections (About/Highlights/Publications) consistent */
+    /* Consistent layout for About, Highlights, and Publications */
     #about .container,
     #publications .container {
       max-width: 900px;
@@ -51,11 +47,11 @@
     }
     #about h2, #about h3,
     #publications h2 {
-      text-align: left; /* match Publications vibe */
+      text-align: left;
       margin-bottom: 0.75rem;
     }
 
-    /* Use the same list style as publications */
+    /* Unified list styling */
     .pubs {
       list-style: none;
       padding: 0;
@@ -66,8 +62,18 @@
       line-height: 1.5;
     }
 
-    /* CTA buttons on hero readable on dark overlay */
-    .btn.primary { border: 1px solid rgba(255,255,255,0.6); }
+    /* Buttons readable on light background */
+    .btn.primary {
+      border: 1px solid #333;
+      color: #000;
+      background: #fff;
+    }
+    .btn.primary:hover {
+      background: #f2f2f2;
+    }
+    .btn {
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -100,7 +106,6 @@
     </div>
   </section>
 
-  <!-- ABOUT now styled like PUBLICATIONS -->
   <section class="section-alt" id="about">
     <div class="container">
       <h2>About</h2>
@@ -124,9 +129,20 @@
     <div class="container">
       <h2>Publications</h2>
       <ul class="pubs">
-        <li><strong>Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</strong></li>
-        <li><strong>Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</strong></li>
-        <li><strong>Epigenomic Signatures of Lifespan Variation in Dogs: Findings from the Dog Aging Project</strong> — <em>Science</em> (in revision)</li>
+        <li>
+          <strong>Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</strong> —
+          <em>GeroScience</em> (2023).  
+          <a href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
+        </li>
+        <li>
+          <strong>Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</strong> —
+          <em>International Journal of Molecular Sciences</em> (2023).  
+          <a href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
+        </li>
+        <li>
+          <strong>Epigenomic Signatures of Lifespan Variation in Dogs: Findings from the Dog Aging Project</strong> —
+          <em>Science</em> (in revision)
+        </li>
       </ul>
       <p class="note">
         Full list on
