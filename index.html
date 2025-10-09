@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blaise Mariner — Bioinformatics & Aging Researcher</title>
+  <title>blaisem mariner — bioinformatics & aging</title>
   <meta name="description" content="Bioinformatics, genomics, and data science. Methylation, RNA-seq, pipelines, reproducible analysis." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@
     a { color: #0a58ca; text-decoration: none; }
     a:hover, a:focus { text-decoration: underline; }
 
-    /* Hero with stronger fade (white overlay) + black text */
+    /* Hero with gentle white overlay + black text */
     .hero {
       position: relative;
       background-image: url("assets/edge_node_graph_borr.png");
@@ -33,14 +33,14 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255,255,255,0.65); /* stronger fade over image */
+      background: rgba(255,255,255,0.65);
     }
     .hero .hero-text {
       position: relative; /* above overlay */
       max-width: 900px;
       margin: 0 auto;
       padding: 1.25rem 1rem;
-      background: rgba(255,255,255,0.8); /* subtle panel for readability */
+      background: rgba(255,255,255,0.8);
       border-radius: 0.75rem;
     }
 
@@ -53,10 +53,9 @@
     #contact h2, #support h2 { text-align: left; margin-bottom: 0.75rem; }
 
     /* Lists */
-    .pubs { list-style: none; padding: 0; margin: 0.5rem 0 0; } /* publications stay unbulleted */
+    .pubs { list-style: none; padding: 0; margin: 0.5rem 0 0; } /* publications: unbulleted */
     .pubs li { margin: 0.5rem 0; line-height: 1.5; }
 
-    /* Bulleted list for Selected Highlights */
     .bulleted { list-style: disc; padding-left: 1.25rem; margin: 0.5rem 0 0; }
     .bulleted li { margin: 0.4rem 0; line-height: 1.5; }
 
@@ -65,17 +64,40 @@
     .btn.primary:hover { background: #f2f2f2; }
     .btn { color: #000; }
 
-    /* Support (ETH) box */
-    #support .eth-box {
-      border: 1px solid #ccc; background: #fafafa; padding: 1rem;
-      border-radius: 0.5rem; word-break: break-all; font-family: monospace; text-align: center;
+    /* Donations box: modest, discreet */
+    #support .donation-box {
+      border: 1px solid #e6e6e6;
+      background: #fbfbfb;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    #support .donation-box p {
+      margin: 0 0 0.5rem 0;
+    }
+    #support .addr {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.25rem 0.75rem;
+      align-items: baseline;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      word-break: break-all;
+    }
+    #support .addr .label {
+      color: #555;
+    }
+    #support .fineprint {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <nav class="nav container">
-      <a class="brand" href="#top">Blaise Mariner</a>
+      <a class="brand" href="#top">blaisem mariner</a>
       <input type="checkbox" id="menu-toggle" class="menu-toggle" />
       <label for="menu-toggle" class="hamburger" aria-label="Open Menu">☰</label>
       <ul class="nav-links">
@@ -90,7 +112,7 @@
 
   <section class="hero container" id="top">
     <div class="hero-text">
-      <h1>Blaise Mariner -- Bioinformatics & Aging Researcher</h1>
+      <h1>blaisem mariner — bioinformatics & aging</h1>
       <p>Genomics, DNA methylation, RNA-seq, pipelines, and reproducible analysis. I help teams turn messy biology into clean, actionable results.</p>
       <div class="cta">
         <a class="btn primary" href="#contact">Work with me</a>
@@ -122,7 +144,6 @@
     </div>
   </section>
 
-  <!-- New Education section -->
   <section class="section-alt" id="education">
     <div class="container">
       <h2>Education</h2>
@@ -174,15 +195,17 @@
 
   <section class="section-alt" id="support">
     <div class="container">
-      <h2>Support My Research</h2>
-      <p>Your contributions directly support my work on aging and age-related deterioration — funding my time, data analysis, and continued independent research.</p>
-      <div class="eth-box">
-        <strong>Ethereum Address:</strong><br>
-        0xC4b57C48908dda8547089E2AE699FeBb9eE93906
+      <h2>Support</h2>
+      <div class="donation-box" aria-label="Donation addresses">
+        <p>Donations help fund ongoing aging research.</p>
+        <div class="addr">
+          <span class="label">Ethereum</span>
+          <span>0xC4b57C48908dda8547089E2AE699FeBb9eE93906</span>
+          <span class="label">PulseChain</span>
+          <span>0x592F919151bE78216fa45dFD7E9Ea41609a47a05</span>
+        </div>
+        <div class="fineprint">Proceeds go directly toward supporting my time and analysis for aging and age-related deterioration research.</div>
       </div>
-      <p style="margin-top:0.75rem; font-size:0.95em; color:#444;">
-        All proceeds go directly toward funding myself and my ongoing research endeavors related to aging and the biology of age-associated decline.
-      </p>
     </div>
   </section>
 
