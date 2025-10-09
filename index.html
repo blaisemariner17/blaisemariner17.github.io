@@ -10,6 +10,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <style>
+    /* Center the About section text and highlights */
+    #about {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    #about .grid.two {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #about ul.bullets,
+    #about .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block;
+      text-align: left; /* keeps bullets aligned nicely */
+    }
+    #about h2,
+    #about h3 {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,7 +46,6 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#writing">Writing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -66,8 +91,9 @@
     <div class="container">
       <h2>Publications</h2>
       <ul class="pubs">
-        <li><strong>Title of Paper</strong> — Journal (2024). <a href="#" target="_blank">DOI</a></li>
-        <li><strong>Another Paper</strong> — Journal (2023). <a href="#" target="_blank">DOI</a></li>
+        <li><strong>Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</strong></li>
+        <li><strong>Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</strong></li>
+        <li><strong>Epigenomic Signatures of Lifespan Variation in Dogs: Findings from the Dog Aging Project</strong> — <em>Science</em> (in revision)</li>
       </ul>
       <p class="note">
         Full list on
