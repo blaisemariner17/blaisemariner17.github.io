@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blaise Mariner, MSc, PhD</title>
-  <meta name="description" content="Bioinformatics, genomics, and molecular biology. -omic pipelines and reproducible analysis." />
+  <meta name="description" content="Bioinformatics scientist specializing in genomics, aging, and -omic pipelines. Reproducible analysis and scalable workflows." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -48,9 +48,9 @@
     .note{color:var(--muted);font-size:0.95rem}
 
     .pubs{list-style:none;margin:8px 0 0;padding:0}
-    .pubs li{margin:10px 0;line-height:1.5}
+    .pubs li{margin:12px 0;line-height:1.6}
     .bulleted{list-style:disc;margin:8px 0 0;padding-left:1.25rem}
-    .bulleted li{margin:6px 0}
+    .bulleted li{margin:8px 0}
 
     .cta{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
     .btn{font-size:0.95rem;padding:6px 10px;border-radius:6px;border:1px solid #222;background:#fff;color:#111}
@@ -118,6 +118,11 @@
     .pubs li { margin: 12px 0; }
     section { scroll-margin-top: 72px; }
     .sidebar { border-left: 1px solid var(--rule); padding-left: 26px; }
+
+    /* Publications formatting */
+    .pub-title{font-weight:600;}
+    .pub-meta{color:var(--muted);font-size:0.95rem;}
+    .pub-link{font-size:0.95rem;}
   </style>
 </head>
 <body>
@@ -139,8 +144,8 @@
     <div class="grid">
       <main>
         <section id="top" aria-label="Intro">
-          <h1>Bioinformatics and molecular biology postdoctoral researcher</h1>
-          <p>I bridge computation and biology to uncover molecular patterns that shape lifespan and healthspan.</p>
+          <h1>Bioinformatics scientist & molecular biologist</h1>
+          <p>I build and deploy scalable -omics workflows to uncover molecular patterns that shape lifespan and healthspan.</p>
           <div class="cta">
             <a class="btn" href="#contact">Work with me</a>
             <a class="btn" href="assets/Blaise_Mariner_CV.pdf" target="_blank" rel="noopener">Download CV</a>
@@ -149,19 +154,19 @@
 
         <section id="about">
           <h2>About</h2>
-          <p><strong>Bioinformatics researcher</strong>. I build robust and scalable analysis pipelines, translating complex genomic results into clear, actionable insights. I am incredibly familiar with building scalable and efficient SLURM-based computational workflows using e.g. Bash, R, Python. I have experience working with a wide range of organisms, including yeast, nematodes, mice, dogs, monkeys, and humans.</p>
+          <p><strong>Bioinformatics scientist</strong>. I design and lead robust, scalable analysis pipelines, translating complex genomic data into clear, actionable insights. I build production-grade SLURM-based computational workflows in Bash, R, and Python, and have worked across yeast, nematodes, mice, dogs, monkeys, and humans.</p>
         
           <ul class="bulleted">
-            <li><strong>Expertise:</strong> DNA methylation, genome-wide association studies (GWAS), quantitative trait loci (QTL), & other -omic approaches (e.g. bulk and single-cell RNA-seq, proteomics)</li>
+            <li><strong>Expertise:</strong> DNA methylation, genome-wide association studies (GWAS), quantitative trait loci (QTL), and other -omic approaches (e.g. bulk and single-cell RNA-seq, proteomics)</li>
             <li><strong>Tools:</strong> R (tidyverse, Bioconductor), Python, PLINK/GCTA, Nextflow/Snakemake; version control with GitHub</li>
             <li><strong>Compute:</strong> HPC at scale, cloud-ready workflows, containerized and reproducible environments</li>
           </ul>
         
           <h2>Selected Scientific Contributions</h2>
           <ul class="bulleted">
-            <li><strong>Autophagy activation by reverse transcriptase inhibitors (Ph.D.):</strong> Demonstrated that reverse transcriptase inhibitors can activate autophagy in mammals via conserved hormetic pathways, supported by many  wet lab assays and RNA sequencing.</li>
-            <li><strong>Aging and transposable elements (Postdoc):</strong> Identified accelerated methylation erosion at transposable elements in larger dog breeds using a 900+ sample Dog Aging Project dataset.</li>
-            <li><strong>Cross-institutional bioinformatics:</strong> I continue to deliver multi-omics analyses, statistical modeling, and reproducible pipelines across collaborations with multiple academic groups.</li>
+            <li><strong>Autophagy activation by reverse transcriptase inhibitors (Ph.D.):</strong> Demonstrated that reverse transcriptase inhibitors can activate autophagy in mammals via conserved hormetic pathways, supported by extensive wet lab assays and RNA sequencing.</li>
+            <li><strong>Aging and transposable elements (Postdoc):</strong> Identified accelerated methylation erosion at transposable elements in larger dog breeds using a 900+ sample Dog Aging Project dataset, highlighting size-dependent epigenetic aging.</li>
+            <li><strong>Cross-institutional bioinformatics:</strong> Deliver multi-omics analyses, statistical modeling, and reproducible pipelines across collaborations with multiple academic groups.</li>
           </ul>
         
           <h2>Scientific Values</h2>
@@ -175,9 +180,9 @@
         <section id="education">
           <h2>Education</h2>
           <ul class="bulleted">
-            <li><strong>Ph.D., Engineering, University of New Mexico</strong> — Graduated with distinction, where my research focused on the Integrated Stress Response. Advisor: Mark A. McCormick, Ph.D.</li>
-            <li><strong>M.Sc., Biomedical Engineering, University of New Mexico</strong> — Concentration in Cellular & Molecular Systems, and my research focused on bioinert polymers used in Tissue Engineering.</li>
-            <li><strong>Undergraduate, University of Denver</strong> — Double major in Mathematics & Biological Sciences</li>
+            <li><strong>Ph.D., Engineering, University of New Mexico</strong> — Graduated with distinction; research focused on the Integrated Stress Response. Advisor: Mark A. McCormick, Ph.D.</li>
+            <li><strong>M.Sc., Biomedical Engineering, University of New Mexico</strong> — Concentration in Cellular & Molecular Systems; research on bioinert polymers used in tissue engineering.</li>
+            <li><strong>Undergraduate, University of Denver</strong> — Double major in Mathematics & Biological Sciences.</li>
           </ul>
         </section>
 
@@ -185,30 +190,32 @@
           <h2>Publications</h2>
           <ul class="pubs">
             <li>
-              <strong>Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</strong> —
-              <em>GeroScience</em> (2023).
-              <a href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
+              <span class="pub-title">Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</span><br>
+              <span class="pub-meta"><em>GeroScience</em> · 2023</span><br>
+              <a class="pub-link" href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
             </li>
             <li>
-              <strong>Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</strong> —
-              <em>International Journal of Molecular Sciences</em> (2023).
-              <a href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
+              <span class="pub-title">Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</span><br>
+              <span class="pub-meta"><em>International Journal of Molecular Sciences</em> · 2023</span><br>
+              <a class="pub-link" href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
             </li>
             <li>
-              <strong>Epigenomic Signatures of Lifespan Variation in Dogs: Findings from the Dog Aging Project</strong> —
-              <em>Science</em> (in revision)
+              <span class="pub-title">Protein Catabolites as Blood‐Based Biomarkers of Aging Physiology: Findings From the Dog Aging Project</span><br>
+              <span class="pub-meta"><em>Aging Cell</em></span><br>
+              <a class="pub-link" href="https://doi.org/10.1111/acel.70226" target="_blank" rel="noopener">DOI: 10.1111/acel.70226</a>
             </li>
             <li>
-              <strong>Diverse Patterns of Allele-Specific Expression in Healthy Human Tissues</strong> —
-              <em>Preprint</em> (DOI: 10.1101/2025.10.14.682127)
+              <span class="pub-title">Epigenomic Signatures of Lifespan Variation in Dogs: Findings from the Dog Aging Project</span><br>
+              <span class="pub-meta"><em>Science</em> · in revision</span>
             </li>
             <li>
-              <strong>Excessive protein AMPylation induces conserved PERK-dependent ER stress signaling</strong> —
-              <em>Cell Stress & Chaperones</em> (in revision)
+              <span class="pub-title">Diverse Patterns of Allele-Specific Expression in Healthy Human Tissues</span><br>
+              <span class="pub-meta"><em>Genome Biology</em> · under review</span><br>
+              <a class="pub-link" href="https://doi.org/10.1101/2025.10.14.682127" target="_blank" rel="noopener">bioRxiv preprint · DOI: 10.1101/2025.10.14.682127</a>
             </li>
             <li>
-              <strong>Protein Catabolites as Blood‐Based Biomarkers of Aging Physiology: Findings From the Dog Aging Project</strong> —
-              <em>Aging Cell</em> (DOI: 10.1111/acel.70226)
+              <span class="pub-title">Excessive protein AMPylation induces conserved PERK-dependent ER stress signaling</span><br>
+              <span class="pub-meta"><em>Cell Stress &amp; Chaperones</em> · under review</span>
             </li>
           </ul>
           <p class="note">
@@ -238,13 +245,6 @@
           </div>
         </section>
 
-        <section id="support">
-          <h2>Support</h2>
-          <div class="donation-box" aria-label="Donation addresses">
-            <p>Contact me if you'd like to give.</p>
-          </div>
-        </section>
-
         <footer>
           © <span id="year"></span> Blaise Mariner · Denver · <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>
         </footer>
@@ -254,7 +254,7 @@
         <div class="card">
           <img class="avatar" src="assets/blaise.jpg" alt="Blaise Mariner portrait (replace assets/blaise.jpg)">
           <h2 class="name">Blaise Mariner</h2>
-          <p class="tag">Bioinformatics & Aging</p>
+          <p class="tag">Bioinformatics &amp; Aging</p>
 
           <div class="affiliation-group">
             <strong>Affiliations</strong>
