@@ -29,6 +29,8 @@
     a{color:var(--link);text-decoration:none}
     a:hover{text-decoration:underline}
 
+    img{max-width:100%;height:auto;display:block}
+
     .wrap{max-width:var(--max);margin:0 auto;padding:24px}
     .grid{
       display:grid;
@@ -39,7 +41,7 @@
 
     @media(max-width:900px){
       .grid{grid-template-columns:1fr;}
-      .sidebar{position:static;}
+      .sidebar{position:static;top:auto;border-left:none;padding-left:0;margin-top:18px}
     }
 
     header{
@@ -61,13 +63,14 @@
 
     nav a{color:var(--muted);font-size:0.95rem}
 
-    h1{font-size:2rem;margin:0 0 8px}
+    h1{font-size:2rem;margin:0 0 8px;line-height:1.2}
     h2{font-size:1.15rem;margin:0 0 6px}
     p{line-height:1.6;margin:8px 0}
 
     main > section{
       padding:28px 0;
       border-bottom:1px solid var(--rule);
+      scroll-margin-top:72px;
     }
 
     .bulleted{
@@ -89,6 +92,8 @@
       padding-left:24px;
     }
 
+    .card{display:flex;flex-direction:column;gap:14px}
+
     .avatar{
       width:120px;
       height:120px;
@@ -97,6 +102,15 @@
       border:1px solid var(--rule);
     }
 
+    .name{margin:0;font-weight:800;font-size:1.1rem}
+    .tag{margin:0;color:var(--muted)}
+
+    .affiliation-group strong{display:block;margin-bottom:6px}
+    .list-plain{list-style:none;margin:0;padding:0}
+    .list-plain li{margin:6px 0}
+
+    .sidebar .social a{display:inline-block;margin-right:10px}
+
     footer{
       border-top:1px solid var(--rule);
       margin-top:26px;
@@ -104,7 +118,6 @@
       color:var(--muted);
       font-size:0.95rem;
     }
-
   </style>
 </head>
 <body>
@@ -119,16 +132,18 @@
       <li><a href="#education">Education</a></li>
       <li><a href="#appointments">Professional Appointments</a></li>
       <li><a href="#publications">Publications</a></li>
+      <li><a href="#life-experience">Life Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <div class="grid">
+
 <main>
 
-<section>
-  <h1>Genetic Bioinformatician & Molecular Biologist</h1>
+<section id="top">
+  <h1>Genetic Bioinformatician &amp; Molecular Biologist</h1>
   <p>
     I design and deploy scalable genomic analysis workflows to uncover molecular mechanisms of aging, lifespan variation, and disease risk.
   </p>
@@ -144,8 +159,8 @@
   </p>
 
   <ul class="bulleted">
-    <li><strong>Domains:</strong> Molecular Biology, Next-Gen Sequencing, single-cell RNA-sequencing, DNA methylation, epigenetic clocks, transposable elements, GWAS, meQTL, Mendelian Randomization</li>
-    <li><strong>Tooling:</strong> R/Bioconductor (DESeq2/Limma/EdgeR, Seruat, BSseq, PQLSeq), Python, PLINK, GCTA, Nextflow, Samtools, bedtools </li>
+    <li><strong>Domains:</strong> Molecular biology, next-generation sequencing, single-cell RNA-seq, DNA methylation, epigenetic clocks, transposable elements, GWAS, meQTL, Mendelian Randomization</li>
+    <li><strong>Tooling:</strong> R/Bioconductor (DESeq2, limma, edgeR, Seurat, bsseq, PQLseq), Python, PLINK, GCTA, Nextflow, samtools, bedtools</li>
     <li><strong>Infrastructure:</strong> SLURM-based HPC, containerized workflows, reproducible pipelines</li>
   </ul>
 </section>
@@ -153,9 +168,16 @@
 <section id="education">
   <h2>Education</h2>
   <ul class="bulleted">
-    <li><strong>Ph.D., Engineering</strong> — University of New Mexico (Graduated with distinction)</li>
+    <li>
+      <strong>Ph.D., Engineering</strong> — University of New Mexico (Graduated with distinction)<br>
+      <span class="pub-meta">
+        Advisor: Dr. Mark A. McCormick, Department of Biochemistry &amp; Molecular Biology, Health Sciences Center, University of New Mexico
+        (<a href="https://labmccormick.org/" target="_blank" rel="noopener">labmccormick.org</a>).<br>
+        Research: ATF4 and drug-inducible, hormetic stress programs that extend lifespan across multiple species.
+      </span>
+    </li>
     <li><strong>M.Sc., Biomedical Engineering</strong> — University of New Mexico</li>
-    <li><strong>B.A., Mathematics & Biological Sciences</strong> — University of Denver</li>
+    <li><strong>B.A., Mathematics &amp; Biological Sciences</strong> — University of Denver</li>
   </ul>
 </section>
 
@@ -164,10 +186,8 @@
 
   <p>
     <strong>Genetic Bioinformatic Researcher</strong><br>
-    Dog Aging Institute & 
-    <a href="https://dogagingproject.org" target="_blank" rel="noopener">
-      Dog Aging Project
-    </a>
+    Dog Aging Institute &amp;
+    <a href="https://dogagingproject.org" target="_blank" rel="noopener">Dog Aging Project</a>
   </p>
 
   <p>
@@ -177,15 +197,12 @@
 
   <p>
     <strong>Collaborative Bioinformatics Research</strong><br>
-    <a href="https://smack-lab.com/" target="_blank" rel="noopener">
-      Snyder-Mackler Lab
-    </a>, Arizona State University
+    <a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab</a>, Arizona State University
   </p>
 
   <p>
     I work closely with Noah Snyder-Mackler’s group on evolutionary genomics and aging biology, developing statistical pipelines and reproducible computational infrastructure for cross-species genomic analyses.
   </p>
-
 </section>
 
 <section id="publications">
@@ -194,54 +211,56 @@
   <ul class="bulleted">
 
     <li>
-      <span class="pub-title">
-        Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors
-      </span><br>
-      <span class="pub-meta">GeroScience · 2023</span><br>
-      <a class="pub-link" href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">
-        DOI: 10.1007/s11357-023-00938-8
-      </a>
+      <span class="pub-title">Induction of proteasomal activity in mammalian cells by lifespan-extending tRNA synthetase inhibitors</span><br>
+      <span class="pub-meta"><em>GeroScience</em> · 2023</span><br>
+      <a class="pub-link" href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
     </li>
 
     <li>
-      <span class="pub-title">
-        Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast
-      </span><br>
-      <span class="pub-meta">International Journal of Molecular Sciences · 2023</span><br>
-      <a class="pub-link" href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">
-        DOI: 10.3390/ijms242216163
-      </a>
+      <span class="pub-title">Multiomics of GCN4-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</span><br>
+      <span class="pub-meta"><em>International Journal of Molecular Sciences</em> · 2023</span><br>
+      <a class="pub-link" href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
     </li>
 
     <li>
-      <span class="pub-title">
-        Protein Catabolites as Blood-Based Biomarkers of Aging Physiology: Findings From the Dog Aging Project
-      </span><br>
-      <span class="pub-meta">Aging Cell · 2025</span><br>
-      <a class="pub-link" href="https://doi.org/10.1111/acel.70226" target="_blank" rel="noopener">
-        DOI: 10.1111/acel.70226
-      </a>
+      <span class="pub-title">Protein Catabolites as Blood-Based Biomarkers of Aging Physiology: Findings From the Dog Aging Project</span><br>
+      <span class="pub-meta"><em>Aging Cell</em> · 2025</span><br>
+      <a class="pub-link" href="https://doi.org/10.1111/acel.70226" target="_blank" rel="noopener">DOI: 10.1111/acel.70226</a>
     </li>
 
     <li>
-      <span class="pub-title">
-        Epigenomic Signatures of Lifespan Variation in Dogs
-      </span><br>
-      <span class="pub-meta">Science · Under Review</span>
+      <span class="pub-title">Epigenomic Signatures of Lifespan Variation in Dogs</span><br>
+      <span class="pub-meta"><em>Science</em> · Under Review</span>
     </li>
 
     <li>
-      <span class="pub-title">
-        Diverse Patterns of Allele-Specific Expression in Healthy Human Tissues
-      </span><br>
-      <span class="pub-meta">Genome Biology · Under Review</span><br>
-      <a class="pub-link" href="https://doi.org/10.1101/2025.10.14.682127" target="_blank" rel="noopener">
-        bioRxiv: 10.1101/2025.10.14.682127
-      </a>
+      <span class="pub-title">Diverse Patterns of Allele-Specific Expression in Healthy Human Tissues</span><br>
+      <span class="pub-meta"><em>Genome Biology</em> · Under Review</span><br>
+      <a class="pub-link" href="https://doi.org/10.1101/2025.10.14.682127" target="_blank" rel="noopener">bioRxiv: 10.1101/2025.10.14.682127</a>
     </li>
 
   </ul>
+</section>
 
+<section id="life-experience">
+  <h2>Life Experience</h2>
+  <p>
+    Outside of research, I’ve pursued experiences that build communication, leadership, and resilience in high-responsibility environments.
+  </p>
+  <ul class="bulleted">
+    <li>
+      <strong>Endurance mountain biker</strong> — Trains and competes in long-distance mountain bike races, including the 2026 Leadville 100.
+    </li>
+    <li>
+      <strong>Educator in Ecuador (3 semesters)</strong> — Taught 150+ students in a pre-medical program, leading Level 4 ESL courses designed for scientific and clinical communication.
+    </li>
+    <li>
+      <strong>Tungurahua Province basketball tournament champion (3×)</strong> — Competed in regional tournaments in Ambato, Ecuador, developing teamwork and adaptability in a cross-cultural setting.
+    </li>
+    <li>
+      <strong>Sailing counselor &amp; activities director (3 summers, Maine)</strong> — Managed 14 activity areas and coordinated 25+ counselors serving ~150 campers.
+    </li>
+  </ul>
 </section>
 
 <section id="contact">
@@ -252,23 +271,40 @@
 </section>
 
 <footer>
-  © <span id="year"></span> Blaise Mariner, PhD · Denver
+  © <span id="year"></span> Blaise Mariner, PhD · Denver ·
+  <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>
 </footer>
 
 </main>
 
-<aside class="sidebar">
+<aside class="sidebar" aria-label="Profile">
+  <div class="card">
+    <img class="avatar" src="assets/blaise.jpg" alt="Blaise Mariner portrait">
 
-  <img class="avatar" src="assets/blaise.jpg" alt="Blaise Mariner">
+    <h2 class="name">Blaise Mariner, PhD</h2>
+    <p class="tag">Genomics · Aging · Statistical Genetics</p>
 
-  <h2>Blaise Mariner, PhD</h2>
-  <p>Genomics · Aging · Statistical Genetics</p>
+    <div class="affiliation-group">
+      <strong>Affiliations</strong>
+      <ul class="list-plain">
+        <li><a href="https://dogagingproject.org" target="_blank" rel="noopener">Dog Aging Project</a></li>
+        <li><a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab (ASU)</a></li>
+      </ul>
+    </div>
 
-  <p>
-    <a href="https://www.linkedin.com/in/Blaise-Mariner" target="_blank">LinkedIn</a> ·
-    <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ" target="_blank">Google Scholar</a>
-  </p>
+    <div class="affiliation-group">
+      <strong>Past</strong>
+      <ul class="list-plain">
+        <li><a href="https://labmccormick.org/" target="_blank" rel="noopener">McCormick Lab (UNM)</a></li>
+      </ul>
+    </div>
 
+    <div class="affiliation-group social">
+      <strong>Links</strong><br>
+      <a href="https://www.linkedin.com/in/Blaise-Mariner" target="_blank" rel="noopener">LinkedIn</a> ·
+      <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+    </div>
+  </div>
 </aside>
 
 </div>
