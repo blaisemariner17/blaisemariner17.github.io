@@ -3,43 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blaise Mariner, PhD</title>
+
+  <title>Blaise Mariner, PhD | Computational Genomics Research Scientist</title>
   <meta
     name="description"
-    content="Blaise Mariner is a computational biologist working in a high-integration role across aging biology, genomics, statistical modeling, HPC engineering, and scientific communication."
+    content="Blaise Mariner, PhD is a computational genomics research scientist working across aging biology, epigenomics, statistical modeling, high-performance computing, and scientific strategy. He leads complex research from biological question to scalable analysis to publication."
   />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Blaise Mariner, PhD | Computational Genomics Research Scientist" />
+  <meta
+    property="og:description"
+    content="Computational genomics, aging biology, statistical modeling, HPC engineering, and end-to-end scientific leadership."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --text:#111;
-      --muted:#555;
-      --soft:#777;
-      --rule:#eaeaea;
+      --text:#111111;
+      --muted:#555555;
+      --soft:#777777;
+      --rule:#e6e6e6;
       --link:#0a58ca;
-      --bg:#fff;
-      --panel:#fafafa;
-      --max:1120px;
+      --bg:#ffffff;
+      --panel:#f7f7f7;
+      --panel-strong:#f1f1f1;
+      --max:1180px;
       --sidebar:290px;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     html, body{
       background:var(--bg);
       color:var(--text);
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family:Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       margin:0;
       padding:0;
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
+
+    body{
+      font-size:16px;
+    }
 
     a{
       color:var(--link);
       text-decoration:none;
     }
 
-    a:hover{text-decoration:underline}
+    a:hover{
+      text-decoration:underline;
+    }
 
     img{
       max-width:100%;
@@ -55,23 +78,9 @@
 
     .grid{
       display:grid;
-      grid-template-columns:1fr minmax(240px, var(--sidebar));
-      gap:44px;
+      grid-template-columns:minmax(0, 1fr) minmax(240px, var(--sidebar));
+      gap:48px;
       align-items:start;
-    }
-
-    @media (max-width: 920px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .sidebar{
-        position:static;
-        top:auto;
-        border-left:none;
-        padding-left:0;
-        margin-top:10px;
-      }
     }
 
     header{
@@ -82,14 +91,14 @@
 
     .brand{
       font-weight:800;
-      font-size:1.05rem;
+      font-size:1.06rem;
       letter-spacing:0.01em;
     }
 
     nav ul{
       list-style:none;
       padding:0;
-      margin:10px 0 0;
+      margin:11px 0 0;
       display:flex;
       gap:16px;
       flex-wrap:wrap;
@@ -97,20 +106,22 @@
 
     nav a{
       color:var(--muted);
-      font-size:0.95rem;
+      font-size:0.93rem;
     }
 
     h1{
-      font-size:2.4rem;
-      line-height:1.1;
-      margin:0 0 12px;
-      max-width:900px;
+      font-size:clamp(2.35rem, 5vw, 4.35rem);
+      line-height:1.02;
+      letter-spacing:-0.045em;
+      margin:0 0 20px;
+      max-width:930px;
     }
 
     h2{
-      font-size:1.18rem;
+      font-size:1.22rem;
       line-height:1.3;
-      margin:0 0 8px;
+      margin:0 0 10px;
+      letter-spacing:-0.015em;
     }
 
     h3{
@@ -120,19 +131,20 @@
     }
 
     p{
-      line-height:1.7;
+      line-height:1.72;
       margin:10px 0;
-      max-width:780px;
+      max-width:800px;
     }
 
     main > section{
-      padding:30px 0;
+      padding:34px 0;
       border-bottom:1px solid var(--rule);
       scroll-margin-top:72px;
     }
 
     .hero{
-      padding-top:8px;
+      padding-top:12px;
+      padding-bottom:38px;
     }
 
     .hero-kicker{
@@ -140,62 +152,150 @@
       font-size:0.98rem;
       font-weight:600;
       letter-spacing:0.01em;
-      margin-bottom:8px;
+      margin-bottom:14px;
     }
 
     .hero-sub{
-      font-size:1.08rem;
+      font-size:1.12rem;
+      line-height:1.7;
       color:var(--muted);
       max-width:850px;
-      margin-top:0;
+      margin:0 0 20px;
     }
 
-    .emphasis{
+    .hero-sub strong{
+      color:var(--text);
       font-weight:700;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+
+    .button{
+      display:inline-block;
+      padding:10px 14px;
+      border:1px solid var(--text);
+      color:var(--text);
+      font-size:0.92rem;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .button:hover{
+      background:var(--text);
+      color:#fff;
+      text-decoration:none;
+    }
+
+    .button.primary{
+      background:var(--text);
+      color:#fff;
+    }
+
+    .button.primary:hover{
+      background:#333;
+    }
+
+    .section-intro{
+      color:var(--muted);
+      margin-top:0;
+      max-width:820px;
+    }
+
+    .impact-strip{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:12px;
+      margin-top:22px;
+      max-width:900px;
+    }
+
+    .impact{
+      border-top:3px solid var(--text);
+      padding:14px 4px 4px 0;
+    }
+
+    .impact .big{
+      font-weight:800;
+      font-size:1.05rem;
+      margin-bottom:5px;
+    }
+
+    .impact p{
+      margin:0;
+      color:var(--muted);
+      font-size:0.93rem;
+      line-height:1.55;
     }
 
     .feature-grid{
       display:grid;
       grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:16px;
+      gap:14px;
       margin-top:20px;
-      max-width:820px;
-    }
-
-    @media (max-width: 700px){
-      .feature-grid{
-        grid-template-columns:1fr;
-      }
+      max-width:900px;
     }
 
     .feature{
       border:1px solid var(--rule);
       background:var(--panel);
-      padding:16px 16px 14px;
+      padding:17px 17px 15px;
     }
 
     .feature h3{
-      margin-bottom:4px;
+      margin-bottom:5px;
     }
 
     .feature p{
       margin:0;
       color:var(--muted);
       max-width:none;
-      font-size:0.96rem;
-      line-height:1.6;
+      font-size:0.95rem;
+      line-height:1.62;
+    }
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:14px;
+      margin-top:20px;
+      max-width:900px;
+    }
+
+    .service{
+      padding:18px;
+      border:1px solid var(--rule);
+    }
+
+    .service h3{
+      font-size:1.02rem;
+    }
+
+    .service p{
+      color:var(--muted);
+      font-size:0.95rem;
+      line-height:1.62;
+      margin-bottom:0;
     }
 
     .bulleted{
       list-style:disc;
       padding-left:1.25rem;
       margin:12px 0 0;
-      max-width:840px;
+      max-width:860px;
     }
 
     .bulleted li{
-      margin:10px 0;
+      margin:9px 0;
       line-height:1.65;
+    }
+
+    .compact li{
+      margin:6px 0;
     }
 
     .pub-title{
@@ -213,13 +313,71 @@
 
     .callout{
       border-left:3px solid var(--text);
-      padding-left:16px;
-      margin:14px 0 0;
-      max-width:820px;
+      padding:2px 0 2px 17px;
+      margin:20px 0 0;
+      max-width:850px;
     }
 
     .callout p{
-      margin:8px 0;
+      margin:7px 0;
+    }
+
+    .flagship{
+      background:var(--panel);
+      border:1px solid var(--rule);
+      padding:20px;
+      max-width:900px;
+      margin-top:18px;
+    }
+
+    .flagship-label{
+      color:var(--muted);
+      text-transform:uppercase;
+      font-size:0.76rem;
+      font-weight:700;
+      letter-spacing:0.08em;
+      margin-bottom:8px;
+    }
+
+    .flagship h3{
+      font-size:1.2rem;
+      line-height:1.4;
+    }
+
+    .flagship p{
+      color:var(--muted);
+      margin-bottom:0;
+    }
+
+    .role{
+      margin-top:22px;
+      max-width:860px;
+    }
+
+    .role:first-of-type{
+      margin-top:12px;
+    }
+
+    .role-title{
+      font-weight:700;
+      font-size:1.02rem;
+    }
+
+    .role-org{
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .availability{
+      background:var(--panel-strong);
+      border:1px solid var(--rule);
+      padding:20px;
+      max-width:900px;
+      margin-top:20px;
+    }
+
+    .availability p{
+      margin:6px 0;
     }
 
     .sidebar{
@@ -236,8 +394,8 @@
     }
 
     .avatar{
-      width:124px;
-      height:124px;
+      width:128px;
+      height:128px;
       border-radius:50%;
       object-fit:cover;
       border:1px solid var(--rule);
@@ -246,18 +404,20 @@
     .name{
       margin:0;
       font-weight:800;
-      font-size:1.12rem;
+      font-size:1.14rem;
     }
 
     .tag{
       margin:0;
       color:var(--muted);
-      line-height:1.5;
+      line-height:1.55;
     }
 
-    .affiliation-group strong{
+    .sidebar-label{
       display:block;
       margin-bottom:6px;
+      font-size:0.9rem;
+      font-weight:700;
     }
 
     .list-plain{
@@ -269,6 +429,7 @@
     .list-plain li{
       margin:6px 0;
       line-height:1.5;
+      font-size:0.94rem;
     }
 
     .sidebar .social a{
@@ -276,29 +437,72 @@
       margin-right:10px;
     }
 
+    .small{
+      color:var(--muted);
+      font-size:0.89rem;
+      line-height:1.55;
+    }
+
     footer{
       border-top:1px solid var(--rule);
       margin-top:26px;
-      padding-top:12px;
+      padding-top:14px;
       color:var(--muted);
-      font-size:0.95rem;
+      font-size:0.92rem;
+    }
+
+    @media (max-width: 920px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .sidebar{
+        position:static;
+        top:auto;
+        border-left:none;
+        border-top:1px solid var(--rule);
+        padding-left:0;
+        padding-top:28px;
+        margin-top:8px;
+      }
+    }
+
+    @media (max-width: 700px){
+      .feature-grid,
+      .service-grid,
+      .impact-strip{
+        grid-template-columns:1fr;
+      }
+
+      .wrap{
+        padding:18px;
+      }
+
+      nav ul{
+        gap:11px 14px;
+      }
+
+      main > section{
+        padding:28px 0;
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
 <div class="wrap">
 
   <header>
     <div class="brand">Blaise Mariner, PhD</div>
-    <nav>
+    <nav aria-label="Primary">
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#integration">What makes my work distinct</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#appointments">Professional Appointments</a></li>
+        <li><a href="#impact">Scientific impact</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#consulting">Consulting</a></li>
+        <li><a href="#appointments">Appointments</a></li>
         <li><a href="#publications">Publications</a></li>
-        <li><a href="#life-experience">Life Experience</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -309,166 +513,249 @@
     <main>
 
       <section id="top" class="hero">
-        <div class="hero-kicker">Computational biologist · statistical genomicist · scientific systems builder</div>
+        <div class="hero-kicker">Computational genomics research scientist · aging biology · scientific strategy</div>
+
         <h1>
-          I work in a high-integration role at the intersection of aging biology, genomics, statistical modeling, high-performance computation engineering, and scientific writing.
+          I turn complex biological datasets into rigorous analyses, scalable research systems, and high-impact scientific stories.
         </h1>
+
         <p class="hero-sub">
-          My work is defined less by any single tool or field than by integration:
-          I connect biological questions to statistical models, large-scale computational infrastructure,
-          and clear scientific narratives that can move a project from raw data to publishable insight.
+          I work across <strong>computational genomics, epigenomics, statistical modeling, high-performance computing, and scientific writing</strong>.
+          My role is often end-to-end: helping define the biological question, designing the analysis, building the infrastructure,
+          interpreting the result, and driving the work toward publication.
         </p>
+
+        <p class="hero-sub">
+          I currently work across large collaborative research programs in aging and evolutionary genomics, including the
+          <a href="https://dogagingproject.org" target="_blank" rel="noopener">Dog Aging Project</a> and the
+          <a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab</a>.
+        </p>
+
+        <div class="cta-row">
+          <a class="button primary" href="mailto:blaisemariner17@gmail.com">Discuss a project</a>
+          <a class="button" href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button" href="https://www.linkedin.com/in/Blaise-Mariner" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </section>
 
       <section id="about">
         <h2>About</h2>
+
         <p>
-          I am a research scientist and engineer focused on aging, epigenomics, and large-scale multi-omic analysis.
-          I design computational and statistical frameworks to study how genetic variation, epigenetic regulation,
-          and molecular stress responses shape lifespan, disease risk, and biological decline across species.
-        </p>
-        <p>
-          What distinguishes my work is that I do not sit neatly within a single lane.
-          I operate in a <span class="emphasis">high-integration role</span> that combines
-          genomics domain expertise, evolutionary reasoning, statistical modeling,
-          high-performance computing, and scientific communication.
+          I am a computational biologist, research scientist, and engineer focused on the molecular biology of aging.
+          I specialize in extracting interpretable biological signal from large, structured genomic datasets and in building
+          the computational systems required to do that work reproducibly at scale.
         </p>
 
-        <ul class="bulleted">
-          <li><strong>Tooling:</strong> R, Python, Bash</li>
-          <li><strong>Statistical work:</strong> mixed models, genome-scale association analysis, epigenetic clock modeling, causal inference, high-dimensional data analysis</li>
-          <li><strong>Infrastructure:</strong> SLURM-based high-performance computing, reproducible pipelines, scalable genomics workflows, restartable large-scale analyses</li>
-          <li><strong>Scientific scope:</strong> aging biology, epigenomics, evolutionary genomics, multi-omics integration, cross-species comparative analysis</li>
-        </ul>
-      </section>
-
-      <section id="integration">
-        <h2>What makes my work distinct</h2>
         <p>
-          Many scientists specialize in one part of the research stack. My work is unusual because it integrates
-          several layers that are often separated across teams.
+          My value is not tied to a single assay, programming language, or statistical method. I operate across the research stack:
+          biological reasoning, study design, statistical genetics, epigenomics, software and HPC infrastructure, data interpretation,
+          figure development, manuscript strategy, and collaborative scientific communication.
         </p>
-
-        <div class="feature-grid">
-          <div class="feature">
-            <h3>Statistical modeling</h3>
-            <p>
-              I build and adapt models that can extract biological signal from noisy, structured, and longitudinal genomic data.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>HPC engineering</h3>
-            <p>
-              I design scalable workflows that can process millions of genomic and epigenomic measurements efficiently and reproducibly.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Genomics domain expertise</h3>
-            <p>
-              My work is grounded in the biological interpretation of methylation, transcriptional regulation, genomic architecture, and aging-related mechanisms.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Evolutionary reasoning</h3>
-            <p>
-              I frame modern genomic data in the context of lifespan evolution, tradeoffs, comparative biology, and conserved stress-response programs.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Scientific writing</h3>
-            <p>
-              I translate technical analyses into clear figures, arguments, and manuscripts that make complex biological systems legible to collaborators and reviewers.
-            </p>
-          </div>
-
-          <div class="feature">
-            <h3>Research integration</h3>
-            <p>
-              I connect hypothesis generation, computational execution, interpretation, and communication rather than treating them as separate jobs.
-            </p>
-          </div>
-        </div>
 
         <div class="callout">
           <p>
-            In practice, this means I am not only analyzing data. I am often helping define the biological question,
-            designing the statistical approach, building the computational system needed to run it at scale,
-            and shaping the narrative that explains why the result matters.
+            <strong>I am most useful on scientifically difficult projects that require both depth and integration:</strong>
+            projects where the analysis must be technically rigorous, biologically defensible, computationally scalable,
+            and ultimately communicated as a coherent scientific argument.
           </p>
         </div>
       </section>
 
-      <section id="education">
-        <h2>Education</h2>
-        <ul class="bulleted">
-          <li>
-            <strong>Ph.D., Engineering</strong> — University of New Mexico (Graduated with distinction)<br>
-            <span class="pub-meta">
-              Advisor: Dr. Mark A. McCormick, Department of Biochemistry &amp; Molecular Biology, University of New Mexico Health Sciences Center
-              (<a href="https://labmccormick.org/" target="_blank" rel="noopener">labmccormick.org</a>).<br>
-              Research: ATF4 and drug-inducible hormetic stress programs that extend lifespan across multiple species.
-            </span>
-          </li>
-          <li><strong>M.Sc., Biomedical Engineering</strong> — University of New Mexico</li>
-          <li><strong>B.A., Mathematics &amp; Biological Sciences</strong> — University of Denver</li>
-        </ul>
+      <section id="impact">
+        <h2>Selected scientific impact</h2>
+        <p class="section-intro">
+          My work is centered on ownership and delivery: taking difficult analyses from open-ended scientific questions to results
+          that can withstand collaborative scrutiny, peer review, and publication.
+        </p>
+
+        <div class="flagship">
+          <div class="flagship-label">Flagship research</div>
+          <h3>
+            First-author <em>Science</em> research article from the Dog Aging Project
+          </h3>
+          <p>
+            I helped lead the analytical and scientific development of work linking epigenetic aging, transposable-element dysregulation,
+            body size, and lifespan compression in dogs. The manuscript integrates large-scale methylation data with demographic and
+            genomic context to address why shorter-lived demographic groups exhibit accelerated molecular aging.
+          </p>
+        </div>
+
+        <div class="impact-strip">
+          <div class="impact">
+            <div class="big">End-to-end ownership</div>
+            <p>From hypothesis and model design through analysis, figures, interpretation, manuscript development, and revision.</p>
+          </div>
+
+          <div class="impact">
+            <div class="big">Consortium-scale science</div>
+            <p>Experienced working across large collaborative projects where analytical decisions must remain interpretable and defensible across disciplines.</p>
+          </div>
+
+          <div class="impact">
+            <div class="big">Research systems that persist</div>
+            <p>I build reproducible pipelines and analytical infrastructure that remain useful beyond a single figure or manuscript.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities">
+        <h2>Capabilities</h2>
+        <p class="section-intro">
+          I combine scientific reasoning with implementation. That combination is particularly useful when a project cannot be cleanly
+          handed from a biologist to a statistician to an engineer without losing context.
+        </p>
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <h3>Computational genomics &amp; epigenomics</h3>
+            <p>
+              Genome-scale methylation analysis, meQTL mapping, GWAS integration, ancestry-aware analysis,
+              epigenetic clocks, longitudinal molecular phenotypes, and comparative genomics.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Statistical modeling</h3>
+            <p>
+              Mixed-effects models, high-dimensional association testing, hierarchical and longitudinal analysis,
+              causal-inference frameworks, multiple-testing control, sensitivity analysis, and model interpretation.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Scientific computing &amp; HPC</h3>
+            <p>
+              R, Python, Bash, SLURM, scalable genomics pipelines, restartable workflows, large-file processing,
+              computational debugging, reproducibility, and production-scale research infrastructure.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Aging &amp; evolutionary biology</h3>
+            <p>
+              Lifespan variation, epigenetic aging, stress-response biology, transposable elements, comparative biology,
+              evolutionary tradeoffs, and cross-species interpretation.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Scientific writing &amp; figures</h3>
+            <p>
+              I translate complex analyses into figures, results, conceptual models, manuscripts, responses to reviewers,
+              and presentations that make the biological argument clear.
+            </p>
+          </div>
+
+          <div class="feature">
+            <h3>Research strategy &amp; integration</h3>
+            <p>
+              I help determine which questions are answerable with the available data, which analyses are worth pursuing,
+              what additional evidence is needed, and how separate results fit into a publishable scientific story.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="consulting">
+        <h2>Independent scientific consulting</h2>
+
+        <p>
+          I am available for selective contract and collaborative work in computational genomics, epigenomics,
+          statistical analysis, research infrastructure, and manuscript development.
+        </p>
+
+        <div class="service-grid">
+          <div class="service">
+            <h3>Embedded research scientist</h3>
+            <p>
+              Long-term involvement with a lab, consortium, or research program where continuity, scientific context,
+              and ownership across multiple analyses are important.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>Analysis leadership</h3>
+            <p>
+              Design and execution of complex genomic or epigenomic analyses, including statistical strategy,
+              robustness checks, interpretation, and figure development.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>Computational infrastructure</h3>
+            <p>
+              Design, repair, and scaling of genomics workflows on HPC systems, with emphasis on reproducibility,
+              restartability, validation, and maintainability.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>Manuscript &amp; scientific strategy</h3>
+            <p>
+              Turning a technically correct analysis into a coherent paper: identifying the central claim,
+              resolving analytical gaps, strengthening figures, and supporting revision and reviewer response.
+            </p>
+          </div>
+        </div>
+
+        <div class="availability">
+          <p><strong>Best fit:</strong> complex, collaborative biomedical or comparative-genomics projects where the primary need is not simply “bioinformatics support,” but scientific ownership and integration.</p>
+          <p class="small">
+            For project or contract inquiries, contact
+            <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>.
+          </p>
+        </div>
       </section>
 
       <section id="appointments">
-        <h2>Professional Appointments</h2>
+        <h2>Professional appointments</h2>
 
-        <p>
-          <strong>Bioinformatic research scientist and engineer</strong><br>
-          <a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab</a>, Arizona State University
-        </p>
+        <div class="role">
+          <div class="role-title">Research Scientist &amp; Computational Genomics Researcher</div>
+          <div class="role-org">
+            <a href="https://dogagingproject.org" target="_blank" rel="noopener">Dog Aging Project</a>, Dog Aging Institute
+          </div>
+          <p>
+            I lead and integrate large-scale genomic and epigenomic analyses of aging and lifespan variation in dogs.
+            Current work spans methylation, statistical genetics, genetic ancestry, meQTL mapping, epigenetic clocks,
+            longitudinal analysis, and the molecular consequences of demographic differences in lifespan.
+          </p>
+        </div>
 
-        <p>
-          I work on evolutionary genomics and aging biology, developing computational and statistical systems
-          for large-scale cross-species genomic analysis. This includes building workflows that are not only
-          analytically rigorous, but robust enough to operate at modern genomic scale.
-        </p>
-
-        <p>
-          <strong>Bioinformatic researcher</strong><br>
-          <a href="https://dogagingproject.org" target="_blank" rel="noopener">Dog Aging Project</a>, Dog Aging Institute
-        </p>
-
-        <p>
-          I lead large-scale genomic and epigenomic analyses across 900+ dogs to investigate the molecular architecture
-          of aging and lifespan variation. This work integrates GWAS, meQTL mapping, epigenetic clock modeling,
-          longitudinal methylation analysis, and causal inference frameworks.
-        </p>
-
-        <p>
-          More broadly, my role often involves bridging disciplines that are usually siloed:
-          engineering workflows, modeling biological signal, interpreting genomic results,
-          and helping translate those results into figures, manuscripts, and scientific strategy.
-        </p>
+        <div class="role">
+          <div class="role-title">Bioinformatics Research Scientist &amp; Engineer</div>
+          <div class="role-org">
+            <a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab</a>, Arizona State University
+          </div>
+          <p>
+            I develop computational and statistical systems for evolutionary genomics and cross-species biology,
+            including scalable analysis workflows for large genomic datasets and collaborative research programs.
+          </p>
+        </div>
       </section>
 
       <section id="publications">
-        <h2>Selected Publications</h2>
+        <h2>Selected publications</h2>
 
         <ul class="bulleted">
 
           <li>
             <span class="pub-title">Epigenetic Aging and Transposon Dysregulation Reflect Size-related Lifespan Compression in Dogs</span><br>
-            <span class="pub-meta">Mariner &amp; McCoy et al. · <em>Science</em> · Accepted</span>
+            <span class="pub-meta"><strong>Mariner</strong> &amp; McCoy et al. · <em>Science</em> · Accepted</span>
           </li>
-          
+
           <li>
             <span class="pub-title">Mapping the canine gut microbiome: insights from the Dog Aging Project</span><br>
             <span class="pub-meta">Bamberger et al. · <em>Nature Communications</em> · 2026</span><br>
             <a class="pub-link" href="https://doi.org/10.1038/s41467-026-73193-y" target="_blank" rel="noopener">DOI: 10.1038/s41467-026-73193-y</a>
           </li>
-          
+
           <li>
             <span class="pub-title">Diverse Patterns of Allele-Specific Expression in Healthy Human Tissues</span><br>
-            <span class="pub-meta">Mariner et al. · <em>bioRxiv</em></span><br>
+            <span class="pub-meta"><strong>Mariner</strong> et al. · <em>bioRxiv</em></span><br>
             <a class="pub-link" href="https://doi.org/10.1101/2025.10.14.682127" target="_blank" rel="noopener">DOI: 10.1101/2025.10.14.682127</a>
           </li>
 
@@ -486,47 +773,71 @@
 
           <li>
             <span class="pub-title">Induction of Proteasomal Activity in Mammalian Cells by Lifespan-extending tRNA Synthetase Inhibitors</span><br>
-            <span class="pub-meta">Mariner et al. · <em>GeroScience</em> · 2023</span><br>
+            <span class="pub-meta"><strong>Mariner</strong> et al. · <em>GeroScience</em> · 2023</span><br>
             <a class="pub-link" href="https://doi.org/10.1007/s11357-023-00938-8" target="_blank" rel="noopener">DOI: 10.1007/s11357-023-00938-8</a>
           </li>
 
           <li>
             <span class="pub-title">Multiomics of <em>GCN4</em>-Dependent Replicative Lifespan Extension Models Reveals Gcn4 as a Regulator of Protein Turnover in Yeast</span><br>
-            <span class="pub-meta">Mariner et al. · <em>International Journal of Molecular Sciences</em> · 2023</span><br>
+            <span class="pub-meta"><strong>Mariner</strong> et al. · <em>International Journal of Molecular Sciences</em> · 2023</span><br>
             <a class="pub-link" href="https://doi.org/10.3390/ijms242216163" target="_blank" rel="noopener">DOI: 10.3390/ijms242216163</a>
           </li>
+
+        </ul>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <ul class="bulleted compact">
+          <li>
+            <strong>Ph.D., Engineering</strong> — University of New Mexico, graduated with distinction<br>
+            <span class="pub-meta">
+              Advisor: Dr. Mark A. McCormick, Department of Biochemistry &amp; Molecular Biology,
+              University of New Mexico Health Sciences Center
+              (<a href="https://labmccormick.org/" target="_blank" rel="noopener">labmccormick.org</a>).<br>
+              Research: ATF4 and drug-inducible hormetic stress programs that extend lifespan across multiple species.
+            </span>
+          </li>
+          <li><strong>M.Sc., Biomedical Engineering</strong> — University of New Mexico</li>
+          <li><strong>B.A., Mathematics &amp; Biological Sciences</strong> — University of Denver</li>
         </ul>
       </section>
 
       <section id="life-experience">
-        <h2>Experiences &amp; passions</h2>
+        <h2>Beyond research</h2>
+
         <p>
-          Outside of research, I am drawn to environments that require endurance, adaptability, communication, and sustained responsibility.
-          Those same qualities shape how I approach science.
+          Outside of science, I am drawn to environments that reward endurance, adaptability, communication, and sustained responsibility.
         </p>
 
         <ul class="bulleted">
           <li>
-            <strong>Endurance mountain biker</strong> — Training and competing in long-distance mountain bike races, including the 2026 Leadville 100-mile mountain bike race.
-            I am also raising funds for First Descents to support outdoor programming for young adults affected by cancer.
-            <a href="https://support.firstdescents.org/BlaiseMariner" target="_blank" rel="noopener">Learn more or support the campaign.</a>
+            <strong>Endurance mountain biker</strong> — Training and competing in long-distance mountain bike races,
+            including the 2026 Leadville 100-mile mountain bike race. I also raise funds for First Descents to support
+            outdoor programming for young adults affected by cancer.
+            <a href="https://support.firstdescents.org/BlaiseMariner" target="_blank" rel="noopener">Learn more.</a>
           </li>
           <li>
-            <strong>English as a second language educator in Ambato, Ecuador (3 semesters)</strong> — Taught 150+ students in a pre-medical program, leading Level 4 English courses at CTT de los Andes.
+            <strong>English as a second language educator in Ambato, Ecuador</strong> — Taught 150+ students in a pre-medical program
+            across three semesters, leading Level 4 English courses at CTT de los Andes.
           </li>
           <li>
-            <strong>Tungurahua province basketball tournament champion (4×)</strong> — Competed in regional tournaments in Ecuador, building teamwork and adaptability in a cross-cultural environment.
+            <strong>Tungurahua province basketball tournament champion (4×)</strong> — Competed in regional tournaments in Ecuador.
           </li>
           <li>
-            <strong>Sailing counselor &amp; Director of Activities at Camp Kawanhee for boys (11 summers, Maine)</strong> — Led programs, managed responsibility in dynamic settings, and taught through action and trust.
+            <strong>Sailing counselor &amp; Director of Activities at Camp Kawanhee for boys</strong> — Eleven summers in Maine
+            teaching, leading programs, and managing responsibility in dynamic settings.
           </li>
         </ul>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
+
         <p>
-          Email: <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>
+          For research collaborations, consulting, computational genomics projects, or scientific strategy:
+          <a href="mailto:blaisemariner17@gmail.com">blaisemariner17@gmail.com</a>
         </p>
       </section>
 
@@ -539,42 +850,56 @@
 
     <aside class="sidebar" aria-label="Profile">
       <div class="card">
+
         <img class="avatar" src="assets/blaise.jpg" alt="Blaise Mariner portrait">
 
         <h2 class="name">Blaise Mariner, PhD</h2>
+
         <p class="tag">
-          Aging biology · genomics · statistical modeling · HPC engineering
+          Computational genomics research scientist<br>
+          Aging biology · epigenomics · statistical modeling · HPC
         </p>
 
-        <div class="affiliation-group">
-          <strong>Current affiliations</strong>
+        <div>
+          <span class="sidebar-label">Current work</span>
           <ul class="list-plain">
             <li><a href="https://dogagingproject.org" target="_blank" rel="noopener">Dog Aging Project</a></li>
-            <li><a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab (ASU)</a></li>
+            <li><a href="https://smack-lab.com/" target="_blank" rel="noopener">Snyder-Mackler Lab, ASU</a></li>
           </ul>
         </div>
 
-        <div class="affiliation-group">
-          <strong>Past</strong>
+        <div>
+          <span class="sidebar-label">Selected credential</span>
           <ul class="list-plain">
-            <li><a href="https://labmccormick.org/" target="_blank" rel="noopener">McCormick Lab (UNM)</a></li>
+            <li>First-author <em>Science</em> research article</li>
+            <li>Large-scale aging &amp; epigenomics</li>
+            <li>End-to-end scientific ownership</li>
           </ul>
         </div>
 
-        <div class="affiliation-group">
-          <strong>Profile</strong>
+        <div>
+          <span class="sidebar-label">Contract work</span>
           <ul class="list-plain">
-            <li>High-integration research role</li>
-            <li>Computational biology at genomic scale</li>
-            <li>From hypothesis to infrastructure to manuscript</li>
+            <li>Computational genomics</li>
+            <li>Statistical analysis</li>
+            <li>HPC &amp; workflow engineering</li>
+            <li>Manuscript &amp; scientific strategy</li>
           </ul>
         </div>
 
-        <div class="affiliation-group social">
-          <strong>Links</strong><br>
+        <div>
+          <span class="sidebar-label">Past</span>
+          <ul class="list-plain">
+            <li><a href="https://labmccormick.org/" target="_blank" rel="noopener">McCormick Lab, UNM</a></li>
+          </ul>
+        </div>
+
+        <div class="social">
+          <span class="sidebar-label">Links</span>
           <a href="https://www.linkedin.com/in/Blaise-Mariner" target="_blank" rel="noopener">LinkedIn</a> ·
-          <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://scholar.google.com/citations?user=3rtZIJcAAAAJ" target="_blank" rel="noopener">Scholar</a>
         </div>
+
       </div>
     </aside>
 
